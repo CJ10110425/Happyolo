@@ -1,6 +1,12 @@
 import dbprofile
 from linebot.models import *
 import re
+import pymongo
+client = pymongo.MongoClient("mongodb+srv://ze0966747312:a0966747312@cluster0.bf8bdil.mongodb.net/?retryWrites=true&w=majority",tls=True,tlsAllowInvalidCertificates=True)
+mydb=client["HappyYolo"]
+mycol=mydb["copywriting"]
+
+
 def manager_logging(user_id,Status,Level):
     if Status=="Standard" and Level=="visitor":
         dbprofile.update_Status(user_id,"account_logging")
@@ -31,3 +37,7 @@ def refresh(user_id):
      dbprofile.update_Level(user_id,"visitor")
      dbprofile.update_name(user_id,"null")
      return "你重新做人啦"
+
+
+def update_about_us(text):
+    mycol.update_one({"category":"about_us"},{"$set":{"text":text}})

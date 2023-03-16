@@ -77,11 +77,11 @@ def check_password(user_id,password):
         update_Level(user_id,"manager")
         update_name(user_id,"Vera")
         return "Vera 歡迎回來~"
-    # elif password=="0502":
-    #     update_Status(user_id,"Standard")
-    #     update_Level(user_id,"manager")
-    #     update_name(user_id,"育華")
-    #     return "育華 歡迎回來~"
+    elif password=="0626":
+        update_Status(user_id,"Standard")
+        update_Level(user_id,"manager")
+        update_name(user_id,"育華")
+        return "育華 歡迎回來~"
     elif password=="9411":
         update_Status(user_id,"Standard")
         update_Level(user_id,"manager")

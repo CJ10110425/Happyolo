@@ -36,3 +36,6 @@ def find_rain_pro(location):
 
     percentage = soup.find('span', {'data-testid': 'PercentageValue'}).text
     return ("降雨機率為"+percentage)
+
+
+print(find_rain_pro("台中市造下棒「好"))
